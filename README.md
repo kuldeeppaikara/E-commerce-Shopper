@@ -9,7 +9,7 @@ A full-stack e-commerce application built with React, Node.js, Express, and Mong
 - **Admin**: React.js admin dashboard
 - **Database**: MongoDB Atlas
 - **Authentication**: JWT tokens
-- **File Storage**: Local file system (upgradeable to cloud storage)
+- **File Storage**: Local file system
 
 ## 🚀 Quick Start
 
@@ -18,7 +18,6 @@ A full-stack e-commerce application built with React, Node.js, Express, and Mong
 - Node.js (v18 or higher)
 - npm or yarn
 - MongoDB Atlas account
-- Docker (optional, for containerized deployment)
 
 ### Installation
 
@@ -115,42 +114,6 @@ npm run preview
 cd Admin
 npm run build
 npm run preview
-```
-
-## 🐳 Docker Deployment
-
-### Using Docker Compose
-
-1. **Set up environment variables**
-   ```bash
-   cp .env.example .env
-   # Update .env with your configuration
-   ```
-
-2. **Build and run**
-   ```bash
-   docker-compose up --build
-   ```
-
-3. **Access the applications**
-   - Backend: http://localhost:4000
-   - Frontend: http://localhost:3000
-   - Admin: http://localhost:3001
-
-### Individual Container Build
-
-```bash
-# Backend
-cd Back-end
-docker build -t ecommerce-backend .
-
-# Frontend
-cd Front-end
-docker build -t ecommerce-frontend .
-
-# Admin
-cd Admin
-docker build -t ecommerce-admin .
 ```
 
 ## 🌐 Cloud Deployment
@@ -270,7 +233,7 @@ docker build -t ecommerce-admin .
    - End-to-end tests (implement with Cypress)
 
 3. **Deployment**
-   - Use deployment script: `./deploy.sh`
+   - Choose your preferred cloud platform
    - Environment-specific configurations
    - Database migrations (if needed)
 
@@ -279,7 +242,7 @@ docker build -t ecommerce-admin .
 - **Frontend**: Code splitting, lazy loading
 - **Backend**: Database indexing, caching
 - **Images**: Compression, CDN integration
-- **Deployment**: Containerization, load balancing
+- **Deployment**: Cloud hosting, load balancing
 
 ## 🛡️ Security Checklist
 
@@ -289,7 +252,6 @@ docker build -t ecommerce-admin .
 - ✅ Security headers (Helmet)
 - ✅ CORS configuration
 - ✅ Input validation
-- ✅ Non-root Docker containers
 - ⚠️ Password hashing (implement bcrypt)
 - ⚠️ HTTPS enforcement
 - ⚠️ Database security rules
@@ -312,16 +274,11 @@ docker build -t ecommerce-admin .
    - Check Node.js version compatibility
    - Verify environment variables
 
-4. **Docker Issues**
-   - Ensure Docker daemon is running
-   - Check port conflicts
-   - Verify dockerfile syntax
-
 ### Logs
 
 - **Backend**: Check console output and log files
 - **Frontend**: Browser developer tools
-- **Docker**: `docker logs container_name`
+- **Cloud Platform**: Check deployment logs in dashboard
 
 ## 🤝 Contributing
 
