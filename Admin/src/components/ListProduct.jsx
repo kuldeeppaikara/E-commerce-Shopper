@@ -48,7 +48,7 @@ function ListProduct() {
                 className="grid grid-cols-12 place-items-center w-full py-2.5 px-4 lg:px-12 my-8 mx-auto text-xs sm:text-lg gap-1.5  rounded-md bg-rose-50"
                 key={index}
               >
-                <img src={item.image} alt="" className="list-product0img" />
+                <img src={`${import.meta.env.VITE_API_URL}${item.image}`} alt="" className="list-product0img" />
                 <p className="col-span-3">{item.name}</p>
                 <p className="col-span-2 col-start-5">${item.old_price}</p>
                 <p className="col-span-2 col-start-7">${item.new_price}</p>

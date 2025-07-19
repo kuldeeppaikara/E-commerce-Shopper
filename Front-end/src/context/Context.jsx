@@ -22,7 +22,7 @@ const ShopContextProvider = (props) => {
       fetch(`${import.meta.env.VITE_API_URL}/getcartdata`, {
         method: "POST",
         headers: {
-          Accept: "application/form-data",
+          Accept: "application/json",
           authToken: `${localStorage.getItem("authToken")}`,
           "Content-Type": "application/json",
         },
@@ -39,7 +39,7 @@ const ShopContextProvider = (props) => {
       fetch(`${import.meta.env.VITE_API_URL}/addtocart`, {
         method: "POST",
         headers: {
-          Accept: "application/form-data",
+          Accept: "application/json",
           authToken: `${localStorage.getItem("authToken")}`,
           "Content-Type": "application/json",
         },
@@ -58,7 +58,7 @@ const ShopContextProvider = (props) => {
       fetch(`${import.meta.env.VITE_API_URL}/removefromcart`, {
         method: "POST",
         headers: {
-          Accept: "application/form-data",
+          Accept: "application/json",
           authToken: `${localStorage.getItem("authToken")}`,
           "Content-Type": "application/json",
         },

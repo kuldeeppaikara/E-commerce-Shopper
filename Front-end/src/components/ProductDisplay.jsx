@@ -9,13 +9,13 @@ function ProductDisplay(props) {
     <div className="flex my-0 mx-auto w-[85%] ">
       <div className="flex gap-5 w-1/2 ">
         <div className="flex flex-col gap-5">
-          <img className="h-40 " src={product.image} alt="" />
-          <img className="h-40 " src={product.image} alt="" />
-          <img className="h-40 " src={product.image} alt="" />
-          <img className="h-40 " src={product.image} alt="" />
+          <img className="h-40 " src={`${import.meta.env.VITE_API_URL}${product.image}`} alt="" />
+          <img className="h-40 " src={`${import.meta.env.VITE_API_URL}${product.image}`} alt="" />
+          <img className="h-40 " src={`${import.meta.env.VITE_API_URL}${product.image}`} alt="" />
+          <img className="h-40 " src={`${import.meta.env.VITE_API_URL}${product.image}`} alt="" />
         </div>
         <div className="">
-          <img className="w-2xl h-[700px]" src={product.image} alt="" />
+          <img className="w-2xl h-[700px]" src={`${import.meta.env.VITE_API_URL}${product.image}`} alt="" />
         </div>
       </div>
       <div className="my-5 px-20 flex flex-col justify-start w-1/2  ">

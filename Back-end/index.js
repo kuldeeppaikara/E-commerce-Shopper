@@ -20,6 +20,7 @@ const corsOptions = {
         "http://localhost:3000",
         "http://localhost:5173",
         "http://localhost:5174",
+        "https://e-commerce-shopper-front-end.onrender.com",
       ],
   credentials: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
@@ -60,7 +61,7 @@ app.post("/upload", upload.single("product"), (req, res) => {
   try {
     res.json({
       success: 1,
-      image_url: `${process.env.BASE_URL}/images/${req.file.filename}`,
+      image_url: `/images/${req.file.filename}`,
     });
     // return res.status(200).json(req.file.path);
   } catch (error) {
