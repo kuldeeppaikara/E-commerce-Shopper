@@ -34,7 +34,7 @@ function CartItems() {
           return (
             <div className="flex flex-col gap-5 pt-5" key={item.id}>
               <div className="cartitem-format grid grid-cols-12 place-items-center  ">
-                <img className="cartitem-img " src={item.image} alt="" />
+                <img className="cartitem-img " src={`${import.meta.env.VITE_API_URL}${item.image}`} alt="" />
 
                 <p className="col-span-3 p-2">{item.name}</p>
 
