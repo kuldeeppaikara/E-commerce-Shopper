@@ -11,30 +11,28 @@ const getDefaultCart = () => {
 };
 const ShopContextProvider = (props) => {
   const [all_product, setAll_Product] = useState([]);
-   const [cartItems, setCartItems] = useState(getDefaultCart());
+  const [cartItems, setCartItems] = useState(getDefaultCart());
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/allproducts`)
       .then((response) => response.json())
-      .then((data) => setAll_Product(data))
+      .then((data) => setAll_Product(data));
 
-     if (localStorage.getItem("authToken")) {
-        fetch(`${import.meta.env.VITE_API_URL}/getcartdata`,{
-          method:"POST",
-          headers: {
-            Accept: "application/form-data",
-            authToken: `${localStorage.getItem("authToken")}`,
-            "Content-Type": "application/json",
-          },
-          body:""
-        })
-          .then((response) => response.json())
-          .then((data) => setCartItems(data));
-      }
-
-
+    if (localStorage.getItem("authToken")) {
+      fetch(`${import.meta.env.VITE_API_URL}/getcartdata`, {
+        method: "POST",
+        headers: {
+          Accept: "application/form-data",
+          authToken: `${localStorage.getItem("authToken")}`,
+          "Content-Type": "application/json",
+        },
+        body: "",
+      })
+        .then((response) => response.json())
+        .then((data) => setCartItems(data));
+    }
   }, []);
- 
+
   const addToCart = (id) => {
     setCartItems((prev) => ({ ...prev, [id]: prev[id] + 1 }));
     if (localStorage.getItem("authToken")) {
