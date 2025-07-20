@@ -277,12 +277,9 @@ app.get("/newcollections", async (req, res) => {
 // endpoint for popular in women category
 app.get("/popularinwomen", async (req, res) => {
   try {
-    let products = await Product.find({ category: "women" });
-    let popularwomen = products.slice(1).slice(-4);
+    let products = await Product.find({ category: "women" }).sort({ date: -1 }).limit(4);
     console.log("Popular Women Fetched");
-    res.send(popularwomen);
-
-    // res.status(200).json(popularwomen);
+    res.send(products);
   } catch (error) {
     console.error(error);
   }
