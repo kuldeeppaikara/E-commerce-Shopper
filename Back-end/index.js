@@ -263,10 +263,9 @@ app.post("/login", async (req, res) => {
 // creating endpoint for new collection data.
 app.get("/newcollections", async (req, res) => {
   try {
-    let products = await Product.find({});
-    let newcollections = products.slice(1).slice(-8);
+    let products = await Product.find({}).sort({ date: -1 }).limit(8);
     console.log("New Collections Fetched");
-    res.send(newcollections);
+    res.send(products);
 
     // res.status(200).json(collections);
   } catch (error) {
